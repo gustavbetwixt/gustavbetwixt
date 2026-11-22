@@ -1,0 +1,48 @@
+:root{
+  --paper:#e9e7e2; --paper-dark:#d8d5ce; --ink:#1c1c1c; --ink-soft:#4a4a48;
+  --rule:#2b2b2a; --muted:#7a7874;
+  --serif: "Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono: ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{background:var(--paper-dark)}
+body{
+  margin:0; color:var(--ink); font-family:var(--serif); font-size:1.08rem; line-height:1.65;
+  /* engraving-style cross hatch */
+  background:
+    repeating-linear-gradient(45deg, rgba(0,0,0,.035) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.025) 0 1px, transparent 1px 7px),
+    var(--paper);
+  min-height:100vh;
+}
+.page{max-width:680px; margin:0 auto; padding:3rem 1.5rem 4rem}
+.frame{border:3px double var(--rule); padding:2.5rem 2rem; background:rgba(233,231,226,.85)}
+header.masthead{text-align:center; border-bottom:1px solid var(--rule); padding-bottom:1.5rem; margin-bottom:2rem}
+.plate{width:200px; height:200px; object-fit:cover; filter:grayscale(1) contrast(1.15);
+  border:1px solid var(--rule); outline:1px solid var(--rule); outline-offset:5px; margin:0 auto 1.5rem; display:block}
+h1{font-size:2.4rem; font-weight:normal; letter-spacing:.18em; text-transform:uppercase; margin:0}
+.subtitle{font-style:italic; color:var(--ink-soft); margin:.4rem 0 0}
+h2{font-weight:normal; font-size:1.05rem; letter-spacing:.2em; text-transform:uppercase;
+  border-bottom:1px solid var(--rule); padding-bottom:.3rem; margin:2.2rem 0 1rem}
+p{margin:0 0 1rem}
+a{color:var(--ink); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{background:var(--ink); color:var(--paper); text-decoration:none}
+ul.links{list-style:none; padding:0; margin:0}
+ul.links li{display:flex; justify-content:space-between; gap:1rem; padding:.55rem 0; border-bottom:1px dotted var(--muted)}
+ul.links li span{color:var(--muted); font-family:var(--mono); font-size:.85rem}
+ul.posts{list-style:none; padding:0; margin:0}
+ul.posts li{padding:.55rem 0; border-bottom:1px dotted var(--muted); display:flex; gap:1rem}
+ul.posts time{font-family:var(--mono); font-size:.85rem; color:var(--muted); min-width:6.5rem; padding-top:.15rem}
+.empty{font-style:italic; color:var(--muted)}
+nav.crumbs{font-family:var(--mono); font-size:.85rem; margin-bottom:1.5rem}
+article h1{font-size:1.9rem; letter-spacing:.05em; text-transform:none; text-align:left}
+article .meta{font-family:var(--mono); font-size:.85rem; color:var(--muted); margin:.3rem 0 2rem}
+article p:first-of-type::first-letter{float:left; font-size:3.4rem; line-height:.9; padding:.3rem .5rem 0 0}
+blockquote{margin:1.5rem 0; padding:.2rem 1.2rem; border-left:3px double var(--rule); font-style:italic; color:var(--ink-soft)}
+code{font-family:var(--mono); font-size:.9em; background:var(--paper-dark); padding:.1em .3em}
+pre{background:var(--ink); color:var(--paper); padding:1rem; overflow-x:auto; font-size:.85rem}
+pre code{background:none; padding:0}
+hr{border:0; border-top:1px solid var(--rule); margin:2rem 0}
+footer{text-align:center; margin-top:2.5rem; font-size:.85rem; color:var(--muted); letter-spacing:.15em; text-transform:uppercase}
+@media (max-width:520px){ .frame{padding:1.5rem 1.1rem} h1{font-size:1.8rem} ul.posts li{flex-direction:column; gap:0} }
+
